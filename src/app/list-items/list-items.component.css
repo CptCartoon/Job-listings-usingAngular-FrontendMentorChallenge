@@ -1,0 +1,9 @@
+/* JOBS LISTING */
+
+div.list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 300px;
+  margin-top: 6rem;
+}

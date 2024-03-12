@@ -1,0 +1,33 @@
+<div class="list-item" [ngClass]="listingItem.new ? 'new-item' : ''">
+  <div class="list-item-container">
+    <div class="left-side">
+      <div class="avatar-img-container">
+        <img class="avatar-img" src="../assets/{{ listingItem.logo }}" alt="" />
+      </div>
+      <div class="item-info">
+        <div class="item-details-tags">
+          <span class="item-company-name">{{ listingItem.company }}</span>
+          <span class="item-new-tag" *ngIf="listingItem.new">NEW!</span>
+          <span class="item-featured-tag" *ngIf="listingItem.featured"
+            >FEATURED</span
+          >
+        </div>
+        <h2 class="item-position-name">{{ listingItem.position }}</h2>
+        <div class="item-details-position">
+          <span class="item-time">{{ listingItem.postedAt }}</span>
+          <span class="item-workload">{{ listingItem.contract }}</span>
+          <span class="item-workplace">{{ listingItem.location }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="item-tablets">
+      <span
+        class="item-tablet"
+        *ngFor="let tablet of getTablets(listingItem)"
+        (click)="addFilterTag(tablet)"
+      >
+        {{ tablet }}
+      </span>
+    </div>
+  </div>
+</div>

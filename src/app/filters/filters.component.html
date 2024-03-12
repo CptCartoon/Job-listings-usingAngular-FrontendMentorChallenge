@@ -1,0 +1,12 @@
+<div class="filters-container" *ngIf="getFilterArray().length > 0">
+  <div class="filters-wrapper">
+    <div
+      class="filter-item"
+      *ngFor="let item of getFilterArray(); let i = index"
+    >
+      <p class="filter-name">{{ item }}</p>
+      <button class="remove-filter-btn" (click)="removeFilter(i)"></button>
+    </div>
+  </div>
+  <button class="filter-clear-btn" (click)="clearFilters()">Clear</button>
+</div>
